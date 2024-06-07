@@ -4,7 +4,9 @@
  */
 package com.mycompany.Controleur;
 
+import com.example.ejb.BookServiceBean;
 import com.mycompany.projet1.Tests.Livre;
+import jakarta.ejb.EJB;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -21,6 +23,10 @@ import java.io.PrintWriter;
  */
 @WebServlet(name = "SelecteBook", urlPatterns = { "/SelecteBook" })
 public class SelecteBook extends HttpServlet {
+    
+
+    @EJB
+    private BookServiceBean bookServiceBean;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -33,8 +39,10 @@ public class SelecteBook extends HttpServlet {
             
             String selectedBook = request.getParameter("book");
             
-            Livre livre = new Livre();
-            livre.setNumLivre(selectedBook);
+            //Livre livre = new Livre();
+            //livre.setNumLivre(selectedBook);
+            Livre livre = bookServiceBean.findBookById(selectedBook);
+
             session.setAttribute("Livre", livre);
 
             //session.setAttribute("selectedBook", selectedBook);

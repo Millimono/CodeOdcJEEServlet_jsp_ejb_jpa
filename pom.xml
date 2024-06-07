@@ -21,6 +21,7 @@
             <scope>provided</scope>
         </dependency>
         
+        
             <dependency>
                     <groupId>com.mycompany</groupId>
                     <artifactId>FirstAppcore</artifactId>
@@ -38,6 +39,7 @@
                 <artifactId>itextpdf</artifactId>
                 <version>5.5.13.3</version>
              </dependency>
+            
              
     </dependencies>
     
