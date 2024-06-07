@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>Select Book</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<body>
+    <h1>Select a Book</h1>
+    <form action="SelecteBook" method="POST">
+        <input type="hidden" name="action" value="selectBook">
+        <label for="book">Choose a book:</label>
+        <select id="book" name="book">
+            <option value="Book A">Book A</option>
+            <option value="Book B">Book B</option>
+            <option value="Book C">Book C</option>
+        </select>
+        <button type="submit">Select</button>
+    </form>
+</body>
+
+</html>

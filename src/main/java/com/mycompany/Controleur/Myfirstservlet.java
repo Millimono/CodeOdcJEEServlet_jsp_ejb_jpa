@@ -26,6 +26,9 @@ public class Myfirstservlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse resp)
             throws ServletException, IOException 
     {
+        
+        resp.setContentType("text/html");
+
         PrintWriter out = resp.getWriter();
         
         Personne p = new Personne("sory", "millimono");

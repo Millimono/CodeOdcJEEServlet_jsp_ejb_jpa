@@ -1,5 +1,11 @@
-com\mycompany\Controleur\HelloServlet.class
 com\mycompany\Controleur\Personne.class
-com\mycompany\Controleur\Myfirstservlet.class
+com\mycompany\Controleur\RetraitArgent.class
+com\mycompany\Controleur\UserServlet.class
 com\mycompany\odcprojet1\JakartaRestConfiguration.class
+com\mycompany\Controleur\PdfServlet.class
+com\mycompany\Controleur\HelloServlet.class
+com\mycompany\Controleur\SelecteBook.class
+com\mycompany\Controleur\Somme.class
+com\mycompany\Controleur\Myfirstservlet.class
 com\mycompany\odcprojet1\resources\JakartaEE10Resource.class
+com\mycompany\Controleur\ErrorServlet.class
