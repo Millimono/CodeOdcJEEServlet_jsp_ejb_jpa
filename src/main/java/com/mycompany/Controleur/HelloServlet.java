@@ -4,6 +4,8 @@
  */
 package com.mycompany.Controleur;
 
+import com.mycompany.ejb.HelloBean;
+import jakarta.ejb.EJB;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -19,6 +21,9 @@ import java.io.PrintWriter;
 @WebServlet(name="HelloServelet",urlPatterns={"/Hello"} )
 public class HelloServlet extends HttpServlet
 {
+    @EJB
+    private HelloBean Bean;
+
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException 
@@ -29,7 +34,8 @@ public class HelloServlet extends HttpServlet
         (
                  "<html>"
                     +"<body>"
-                    +       "<h1>Hello : Personne</h1>"
+                    +       "<h1>Hello : Personne</h1>" 
+                         +Bean.from()
                     +"</body>"
                 +"</html>"                
         );        

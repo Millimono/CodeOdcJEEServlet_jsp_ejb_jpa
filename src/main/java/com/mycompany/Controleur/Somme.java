@@ -37,11 +37,11 @@ public class Somme extends HttpServlet {
         
          if (this.isInteger(nombre1) && this.isInteger(nombre2)) {
            int somme = Integer.parseInt(nombre1) + Integer.parseInt(nombre2);
-             
+            request.setAttribute("somme", somme);
+
              if (format != null && !format.isEmpty()) {
-                 if ("pdf".equalsIgnoreCase(format)) {
-                     request.setAttribute("somme", somme);
-                 }
+                // if ("pdf".equalsIgnoreCase(format)) {
+                 //}
                  RequestDispatcher dispatcher = request.getRequestDispatcher("/Pdf");
                  dispatcher.forward(request, response);
 
@@ -57,7 +57,8 @@ public class Somme extends HttpServlet {
                  out = response.getWriter(); 
 
                  out.print("<html><body>La somme est " + somme + "</body></html>");
-             */}
+             */
+             }
 
          } else 
          {

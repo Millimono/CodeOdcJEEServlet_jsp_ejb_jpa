@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Somme
-    Created on : 7 juin 2024, 10 h 43 min 55 s
-    Author     : Lenovo
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +6,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Sum Result</h1>
+        <p>La somme est : ${requestScope.somme}</p>
     </body>
+
 </html>
