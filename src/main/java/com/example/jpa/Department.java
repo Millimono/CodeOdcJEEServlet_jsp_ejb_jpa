@@ -21,8 +21,7 @@ public class Department {
 @GeneratedValue(strategy = GenerationType.AUTO)
 private Long id;
 private String name;
-@OneToMany(mappedBy = "department")
-private List<Employe> employees;
+
 // Getters et setters
 
     public Long getId() {
@@ -39,14 +38,6 @@ private List<Employe> employees;
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public List<Employe> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employe> employees) {
-        this.employees = employees;
     }
 
 }

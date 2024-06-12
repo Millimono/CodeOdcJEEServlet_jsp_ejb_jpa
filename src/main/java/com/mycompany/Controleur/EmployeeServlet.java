@@ -19,6 +19,7 @@ public class EmployeeServlet extends HttpServlet {
     @EJB
     private EmployeService employeService;
 
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
@@ -34,10 +35,13 @@ public class EmployeeServlet extends HttpServlet {
             String state = request.getParameter("state");
             String zipCode = request.getParameter("zipCode");
 
-            if (nom == null || departement == null || employeeEmail == null || departmentId == null || 
-                employeeNumberStr == null || employeeTypeStr == null || street == null || city == null || 
+            if (nom == null || departement == null || 
+                    employeeEmail == null || departmentId == null || 
+                employeeNumberStr == null || employeeTypeStr == null || 
+                    street == null || city == null || 
                 state == null || zipCode == null) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "All parameters are required.");
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST, 
+                        "All parameters are required.");
                 return;
             }
 
@@ -45,7 +49,8 @@ public class EmployeeServlet extends HttpServlet {
             try {
                 employeeNumber = Long.parseLong(employeeNumberStr);
             } catch (NumberFormatException e) {
-                response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid employee number.");
+                response.sendError(HttpServletResponse.SC_BAD_REQUEST,
+                        "Invalid employee number.");
                 return;
             }
 
@@ -73,7 +78,8 @@ public class EmployeeServlet extends HttpServlet {
 
             response.getWriter().write("Employe created successfully!");
         } catch (Exception e) {
-            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid input: " + e.getMessage());
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid input: "
+                    + "" + e.getMessage());
         }
     }
 }

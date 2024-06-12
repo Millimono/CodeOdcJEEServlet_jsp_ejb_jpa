@@ -9,7 +9,9 @@ import com.example.TypesPersonnels.EmployeeId;
 import com.example.TypesPersonnels.EmployeeType;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
+import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -18,6 +20,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import java.util.List;
 
 /**
  *
@@ -57,6 +60,13 @@ public class Employe extends Personne
     @ManyToOne
     @JoinColumn(name = "department_id")
     private Department department;
+    
+    @ElementCollection
+    @CollectionTable(name = "employee_phone", 
+            joinColumns = @JoinColumn(name = "employee_id"))
+    @Column(name = "phone_number")
+    private List<String> phones;
+
 
 
 
